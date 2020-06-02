@@ -76,7 +76,14 @@ namespace SSLTest
 
         private void button6_Click(object sender, EventArgs e)
         {
-            ServicePointManager.SecurityProtocol = (SecurityProtocolType)12288; // tls 1.3
+            try
+            {
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)12288; // tls 1.3
+            }
+            catch (Exception ex)
+            {
+                body.Text = ex.Message;
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
