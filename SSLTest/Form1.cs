@@ -58,5 +58,35 @@ namespace SSLTest
         {
             DoRequest("POST");
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; // tls 1.2
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)768; // tls 1.1
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)192; // tls 1.0
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)12288; // tls 1.3
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)0; // system default
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)48; // SSL 3.0
+        }
     }
 }
